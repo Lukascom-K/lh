@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Decreto da Rainha do Fogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="audioFogo" loop>
+    <source src="Fogo.mp3" type="audio/mpeg">
+</audio>
+
+<section class="tela ativo" id="ato1">
+    <div class="overlay"></div>
+    <div class="conteudo">
+
+        <div class="selo">
+            <span>LH</span>
+        </div>
+
+        <h1>O Decreto da Rainha do Fogo</h1>
+        <button onclick="iniciar()">Testemunhar</button>
+    </div>
+</section>
+
+<section class="tela" id="ato2">
+    <div class="overlay"></div>
+    <div class="conteudo">
+        <div id="texto"></div>
+        <button id="btnJuramento" class="hidden" onclick="irParaJuramento()">
+            Revelar Juramento
+        </button>
+    </div>
+</section>
+
+<section class="tela quente" id="ato3">
+    <div class="overlay quente"></div>
+    <div class="conteudo">
+        <h2>🔥 O Juramento 🔥</h2>
+
+        <p>
+            Eu não me ajoelho diante de reinos.
+            Mas me curvo diante da mulher que você é.
+            Que seu fogo nunca se apague.
+            E que cada mês ao seu lado seja mais lendário que o anterior.
+        </p>
+
+        <h3>O Reinado Já Dura:</h3>
+        <p id="contador"></p>
+    </div>
+</section>
+
+<div id="particulas-container"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

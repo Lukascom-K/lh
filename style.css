@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background: radial-gradient(circle, rgba(80,0,0,0.3), black);
+    overflow: hidden;
+    color: #d4af37;
+}
+
+/* TELAS */
+
+.tela {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url('fundo1.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.tela.ativo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* OVERLAY */
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    animation: vela 4s infinite alternate ease-in-out;
+}
+
+.overlay.quente {
+    background: rgba(70,0,0,0.8);
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+    position: relative;
+    max-width: 90%;
+    border: 2px solid rgba(212,175,55,0.6);
+    padding: 30px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    z-index: 3;
+}
+
+/* TIPOGRAFIA */
+
+h1 { font-size: 2rem; margin-bottom: 40px; }
+h2 { font-size: 1.7rem; margin-bottom: 20px; }
+h3 { margin-top: 30px; margin-bottom: 10px; }
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* BOTÃO */
+
+button {
+    background: transparent;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 14px 40px;
+    font-size: 18px;
+    border-radius: 40px;
+    transition: 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+.hidden { display: none; }
+
+/* TEXTO DINÂMICO */
+
+#texto {
+    font-size: 1.2rem;
+    white-space: pre-line;
+    min-height: 150px;
+}
+
+/* PARTÍCULAS */
+
+#particulas-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particula {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, orange, red);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: subir linear infinite;
+}
+
+@keyframes subir {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* ANIMAÇÕES */
+
+@keyframes vela {
+    0% { background: rgba(0,0,0,0.75); }
+    100% { background: rgba(0,0,0,0.65); }
+}
+
+@keyframes tremor {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+.tremor { animation: tremor 0.3s; }
+
+.distorcao {
+    animation: distorcer 0.8s ease;
+}
+
+@keyframes distorcer {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.05) rotate(1deg); }
+    60% { transform: scale(0.98) rotate(-1deg); }
+    100% { transform: scale(1); }
+}
