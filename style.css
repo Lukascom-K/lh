@@ -13,13 +13,12 @@ body {
     color: #d4af37;
 }
 
-/* TELAS */
+/* ================= TELAS ================= */
 
 .tela {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: url('fundo1.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +27,13 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 1s ease;
+    overflow: hidden;
+}
+
+/* Fundo padrão apenas para ato1 e ato2 */
+#ato1,
+#ato2 {
+    background: url('fundo1.jpg') center/cover no-repeat;
 }
 
 .tela.ativo {
@@ -35,7 +41,27 @@ body {
     pointer-events: all;
 }
 
-/* OVERLAY */
+/* ================= VIDEO ATO 3 ================= */
+
+#ato3 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#ato3 .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 105%;
+    height: 105%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* ================= OVERLAY ================= */
 
 .overlay {
     position: absolute;
@@ -43,13 +69,14 @@ body {
     height: 100%;
     background: rgba(0,0,0,0.75);
     animation: vela 4s infinite alternate ease-in-out;
+    z-index: 1;
 }
 
 .overlay.quente {
     background: rgba(70,0,0,0.8);
 }
 
-/* CONTEÚDO */
+/* ================= CONTEÚDO ================= */
 
 .conteudo {
     position: relative;
@@ -62,7 +89,7 @@ body {
     z-index: 3;
 }
 
-/* TIPOGRAFIA */
+/* ================= TIPOGRAFIA ================= */
 
 h1 { font-size: 2rem; margin-bottom: 40px; }
 h2 { font-size: 1.7rem; margin-bottom: 20px; }
@@ -73,7 +100,7 @@ p {
     line-height: 1.6;
 }
 
-/* BOTÃO */
+/* ================= BOTÃO ================= */
 
 button {
     background: transparent;
@@ -83,6 +110,7 @@ button {
     font-size: 18px;
     border-radius: 40px;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 button:active {
@@ -96,7 +124,7 @@ button:hover {
 
 .hidden { display: none; }
 
-/* TEXTO DINÂMICO */
+/* ================= TEXTO DINÂMICO ================= */
 
 #texto {
     font-size: 1.2rem;
@@ -104,7 +132,7 @@ button:hover {
     min-height: 150px;
 }
 
-/* PARTÍCULAS */
+/* ================= PARTÍCULAS ================= */
 
 #particulas-container {
     position: fixed;
@@ -112,6 +140,7 @@ button:hover {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
+    z-index: 5;
 }
 
 .particula {
@@ -129,7 +158,7 @@ button:hover {
     to { transform: translateY(-10vh); opacity: 0; }
 }
 
-/* ANIMAÇÕES */
+/* ================= ANIMAÇÕES ================= */
 
 @keyframes vela {
     0% { background: rgba(0,0,0,0.75); }
