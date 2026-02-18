@@ -12,6 +12,8 @@
     <source src="Fogo.mp3" type="audio/mpeg">
 </audio>
 
+<!-- ================= ATO 1 ================= -->
+
 <section class="tela ativo" id="ato1">
     <div class="overlay"></div>
     <div class="conteudo">
@@ -25,6 +27,8 @@
     </div>
 </section>
 
+<!-- ================= ATO 2 ================= -->
+
 <section class="tela" id="ato2">
     <div class="overlay"></div>
     <div class="conteudo">
@@ -35,16 +39,20 @@
     </div>
 </section>
 
-<section class="tela quente" id="ato3">
+<!-- ================= ATO 3 ================= -->
+
+<section class="tela" id="ato3">
 
     <!-- VIDEO DE FUNDO -->
-    <video autoplay muted loop playsinline class="video-bg">
+    <video autoplay muted loop playsinline preload="auto">
         <source src="ato3.mp4.mp4" type="video/mp4">
     </video>
 
-    <div class="overlay quente"></div>
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
 
-    <div class="conteudo centralizado">
+    <!-- CONTEÚDO -->
+    <div class="conteudo">
         <h2>🔥 O Juramento 🔥</h2>
 
         <p>
@@ -67,16 +75,9 @@
 
 </section>
 
-
-
 <div id="particulas-container"></div>
 
 <script src="script.js"></script>
 
 </body>
 </html>
-
-
-
-
-
