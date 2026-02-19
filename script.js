@@ -137,19 +137,6 @@ document.addEventListener("touchstart", function(e) {
 });
 
 /* ================= EFEITOS ================= */
-
-function vibrarImpacto() {
-    if (navigator.vibrate) {
-        navigator.vibrate([200, 100, 300]);
-    }
-}
-
-function telaCheia() {
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-    }
-}
-
 function efeitoRevelacao() {
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
@@ -173,3 +160,4 @@ function distorcerTela() {
         document.body.classList.remove("distorcao");
     }, 800);
 }
+
